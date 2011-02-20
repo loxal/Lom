@@ -1,0 +1,15 @@
+.DS_Store
+
+*.class
+*.jar
+
+# Android
+bin
+gen
+default.properties
+*.apk
+*.keystore
+
+/.idea/workspace.xml
+/target
+/out
