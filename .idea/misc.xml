@@ -6,6 +6,16 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="android">
+        <modules>
+          <module name="Lom" />
+          <module name="Sodox" />
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="IdProvider" IDEtalkID="AD45E41164B2A753A269A3D3C787C217" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
