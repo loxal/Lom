@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Sodox" type="AndroidRunConfigurationType" factoryName="Android Application">
-    <module name="Sodox" />
+    <module name="Lom" />
     <option name="ACTIVITY_CLASS" value="loxal.sodox.WebAppWrapper" />
     <option name="MODE" value="do_nothing" />
     <option name="DEPLOY" value="true" />
     <option name="CHOOSE_DEVICE_MANUALLY" value="false" />
-    <option name="PREFERRED_AVD" value="HVGA23" />
+    <option name="PREFERRED_AVD" value="" />
     <option name="COMMAND_LINE" value="" />
     <option name="WIPE_USER_DATA" value="false" />
     <option name="DISABLE_BOOT_ANIMATION" value="true" />
