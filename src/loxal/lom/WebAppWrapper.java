@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package loxal.sodox;
+package loxal.lom;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -27,34 +27,34 @@ import android.widget.Toast;
 public class WebAppWrapper extends Activity {
 
     @Override
-    public void onCreate(final Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        final String url = "http://metro.loxal.net/app/metro/index.html";
+        String url = "http://metro.loxal.net/app/metro/index.html";
         final Activity activity = this;
-        final WebView webView = new WebView(this);
+        WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
         webView.setInitialScale(1);
 
         webView.setWebChromeClient(new WebChromeClient() {
-            public void onProgressChanged(final WebView webView, final int progress) {
+            public void onProgressChanged(WebView webView, int progress) {
                 setProgress(progress * 100);
             }
         });
 
         webView.setWebViewClient(new WebViewClient() {
-            public void onReceivedError(final WebView webView,
-                                        final int errorCode, final String description,
-                                        final String failingUrl) {
+            public void onReceivedError(WebView webView,
+                                        int errorCode, String description,
+                                        String failingUrl) {
                 Toast.makeText(activity, "Oops, shouldn't happen! " + description,
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public boolean shouldOverrideUrlLoading(final WebView webView,
-                                                    final String url) {
+            public boolean shouldOverrideUrlLoading(WebView webView,
+                                                    String url) {
                 webView.loadUrl(url);
                 return true;
             }
