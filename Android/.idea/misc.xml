@@ -16,6 +16,9 @@
       </facet-type>
     </autodetection-disabled>
   </component>
+  <component name="HudsonMonitorComponent">
+    <option name="timeOutTextField" value="30" />
+  </component>
   <component name="IdProvider" IDEtalkID="AD45E41164B2A753A269A3D3C787C217" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />

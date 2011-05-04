@@ -30,7 +30,7 @@ public class WebAppWrapper extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String url = "http://metro.loxal.net/app/metro/index.html";
+        String url = "http://sky.loxal.net/app/Metro/index.html";
         final Activity activity = this;
         WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);

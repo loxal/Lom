@@ -2,6 +2,9 @@
 
 *.class
 *.jar
+*.mode1v3
+*.perspectivev3
+*.pbxuser
 
 # Android
 bin
@@ -10,6 +13,7 @@ default.properties
 *.apk
 *.keystore
 
-/.idea/workspace.xml
-/target
-/out
+*/\.idea/workspace.xml
+*/target
+*/out
+*/build
