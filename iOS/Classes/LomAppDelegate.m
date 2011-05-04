@@ -1,15 +1,15 @@
 //
-//  Lom_iOSAppDelegate.m
-//  Lom.iOS
+//  LomAppDelegate.m
+//  Lom
 //
 //  Created by Alexander Orlov on 02.05.11.
 //  Copyright Digital Publishing 2011. All rights reserved.
 //
 
-#import "Lom_iOSAppDelegate.h"
+#import "LomAppDelegate.h"
 #import "PhoneGapViewController.h"
 
-@implementation Lom_iOSAppDelegate
+@implementation LomAppDelegate
 
 - (id) init
 {	

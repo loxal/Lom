@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'Lom.iOS' target in the 'Lom.iOS' project
+// Prefix header for all source files of the 'Lom' target in the 'Lom' project
 //
 
 #ifdef __OBJC__
