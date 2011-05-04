@@ -9,7 +9,9 @@
      <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
      -->
     
-	<script src="phonegap.0.9.5.min.js"></script>
+    <script src="phonegap.0.9.5.min.js"></script>
+
+        
         
     <script>
 	// If you want to prevent dragging, uncomment this section
@@ -22,13 +24,32 @@
 	*/
 	
 	function onBodyLoad() {
-        console.log("MY!!! onBodyLoad()...");
+//        console.log("MY!!! onBodyLoad()...");
+//                navigator.notification.alert("Message here", "Title here", "Button Label Here");
 		document.addEventListener("deviceready", onDeviceReady, false);
+        
 	}
 	
 	/* When this function is called, PhoneGap has been initialized and is ready to roll */
 	function onDeviceReady() {
+                function contactsCount(){
+            debug.log("contactCount");
+            navigator.contacts.contactsCount(onGotContactCount,onGotContactCountError);
+        }
+        
+        function onGotContactCount(num){
+            document.getElementById("contactCountDiv").innerHTML = "Contact Count : " + num;
+        }
+        
+        function onGotContactCountError(err){
+            alert("error getting contacts :: " + err);
+        }
+        
 
+        
+//                console.log("MY!!! onBodyLoad()...");
+        
+//        navigator.notification.alert("Message here", "Title here", "Button Label Here");
 	}
     
     </script>
@@ -37,7 +58,8 @@
       <p>
             <ul>
                 <li><a href="Valeo/index.html">Valeo</a>
-                                    <li><a href="link.html">Valeo Link</a>
+                <li><a href="Valeo1/index.html">Valeo</a>
+                <li><a href="link.html">Valeo Link</a>
                 <li><a href="/Metro/index.html">Metro</a>
                 <li><a href="CV/CV-Alexander-Orlov.html">CV</a>
                 </ul>
