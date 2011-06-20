@@ -47,34 +47,35 @@
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
 
-    <!--<application android:icon="@drawable/icon"-->
-    <!--android:label="@string/app_name"-->
-    <!--android:debuggable="true"-->
-    <!-->-->
-    <!--<activity android:name=".Wrapper"-->
-    <!--android:label="@string/app_name"-->
-    <!--android:configChanges="orientation|keyboardHidden"-->
-    <!-->-->
-    <!--<intent-filter>-->
-    <!--<action android:name="android.intent.action.MAIN"/>-->
-    <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-    <!--</intent-filter>-->
-    <!--</activity>-->
-    <!--</application>-->
-
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon"
+                 android:label="@string/app_name"
+                 android:debuggable="true"
+            >
         <provider android:name="loxal.lom.CountryProvider"
                   android:authorities="com.example.android.gsapidemo.suggestion"
                   android:exported="false"
                   android:grantUriPermissions="true">
         </provider>
-        <activity android:name="loxal.lom.GestureSearchAPIDemo"
-                  android:label="@string/app_name">
+
+        <activity android:name=".GestureSearchAPIDemo"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|keyboardHidden"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Wrapper"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|keyboardHidden"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
     </application>
 
     <uses-sdk android:minSdkVersion="10"/>
