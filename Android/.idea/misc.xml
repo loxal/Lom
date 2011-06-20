@@ -11,7 +11,11 @@
       <facet-type id="android">
         <modules>
           <module name="Lom" />
-          <module name="Sodox" />
+          <module name="Sample">
+            <files>
+              <file url="file://$PROJECT_DIR$/../../../../sdk/phonegap-0.9.5.1/Android/Sample/AndroidManifest.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
     </autodetection-disabled>
@@ -47,8 +51,8 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Android 2.3 Platform" project-jdk-type="Android SDK">
+    <output url="file://$PROJECT_DIR$/target" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

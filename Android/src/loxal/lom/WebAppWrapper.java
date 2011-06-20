@@ -45,16 +45,13 @@ public class WebAppWrapper extends Activity {
         });
 
         webView.setWebViewClient(new WebViewClient() {
-            public void onReceivedError(WebView webView,
-                                        int errorCode, String description,
-                                        String failingUrl) {
+            public void onReceivedError(WebView webView, int errorCode, String description, String failingUrl) {
                 Toast.makeText(activity, "Oops, shouldn't happen! " + description,
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public boolean shouldOverrideUrlLoading(WebView webView,
-                                                    String url) {
+            public boolean shouldOverrideUrlLoading(WebView webView, String url) {
                 webView.loadUrl(url);
                 return true;
             }
