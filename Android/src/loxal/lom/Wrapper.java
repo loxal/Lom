@@ -7,7 +7,7 @@ public class Wrapper extends DroidGap {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/appContainer/index.html");
+        super.loadUrl("file:///android_asset/appContainer/main.html");
     }
 }
     

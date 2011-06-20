@@ -10,6 +10,11 @@
     <autodetection-disabled>
       <facet-type id="android">
         <modules>
+          <module name="gesture-search-api-demo">
+            <files>
+              <file url="file://$USER_HOME$/Desktop/gesture-search-api-demo/AndroidManifest.xml" />
+            </files>
+          </module>
           <module name="Lom" />
           <module name="Sample">
             <files>

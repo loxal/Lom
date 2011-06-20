@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">Metro</string>
     <string name="go">Snap</string>
+
+    <!--Gesture API Demo-->
+    <string name="hello">My very own text</string>
+    <string name="menu_gesture_search">Gesture Search</string>
 </resources>
