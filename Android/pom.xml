@@ -60,7 +60,7 @@
                     <sdk>
                         <path>/Users/alex/my/sdk/android</path>
                         <!--<path>${env.ANDROID_HOME}</path>-->
-                        <platform>3</platform>
+                        <platform>9</platform>
                     </sdk>
                     <emulator>
                         <avd>HVGA-2.3.3-API10</avd>
