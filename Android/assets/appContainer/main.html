@@ -1,6 +1,12 @@
+<!--
+  ~ Copyright 2011 Alexander Orlov <alexander.orlov@loxal.net>. All rights reserved.
+  ~ Use of this source code is governed by a BSD-style
+  ~ license that can be found in the LICENSE file.
+  -->
+
 <!DOCTYPE html>
-<meta name="viewport" content="width=320; user-scalable=no"/>
 <meta charset="utf-8">
+<meta name="viewport" content="width=99%; user-scalable=no"/>
 <title>Lom</title>
 <link rel="stylesheet" href="main.css">
 <script src="phonegap.js"></script>
@@ -8,8 +14,5 @@
 
 <body onload="init();" id="stage" class="theme">
 <a href="main.html#" class="btn large" onclick="onMenuKeyDown();">Notification</a>
-
-<div id="viewport" class="viewport" style="display: none;">
-    <img style="width:60px;height:60px" id="test_img" src=""/>
-</div>
+<iframe src="http://192.168.1.51:8080/client/commander/main.html" style="width: 44px;"></iframe>
 </body>
