@@ -43,7 +43,8 @@
             <groupId>phonegap</groupId>
             <artifactId>phonegap</artifactId>
             <version>0.9.5.1</version>
-            <scope>system</scope>
+            <scope>runtime</scope>
+            <!--<scope>system</scope>-->
             <systemPath>${basedir}/lib/phonegap.0.9.5.1.jar</systemPath>
         </dependency>
     </dependencies>
