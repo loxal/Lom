@@ -49,7 +49,7 @@
 	// Do something with the url here
 	NSString* jsString = [NSString stringWithFormat:@"handleOpenURL(\"%@\");", url];
 	[webView stringByEvaluatingJavaScriptFromString:jsString];
-	
+	 
 	return YES;
 }
 
@@ -73,6 +73,7 @@
 		NSString* jsString = [NSString stringWithFormat:@"var invokeString = \"%@\";", self.invokeString];
 		[theWebView stringByEvaluatingJavaScriptFromString:jsString];
 	}
+
 	return [ super webViewDidFinishLoad:theWebView ];
 }
 
