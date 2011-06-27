@@ -112,4 +112,14 @@
 	[ super dealloc ];
 }
 
++ (NSString*) wwwFolderName
+{
+	return @"www";
+}
+
++ (NSString*) startPage
+{
+	return @"main/main.html";
+}
+
 @end
