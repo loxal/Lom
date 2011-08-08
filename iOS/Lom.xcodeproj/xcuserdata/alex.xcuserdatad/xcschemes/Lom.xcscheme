@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+               BlueprintIdentifier = "FA0E99A713B4A02B006D4129"
                BuildableName = "Lom.app"
                BlueprintName = "Lom"
                ReferencedContainer = "container:Lom.xcodeproj">
@@ -40,7 +40,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BlueprintIdentifier = "FA0E99A713B4A02B006D4129"
             BuildableName = "Lom.app"
             BlueprintName = "Lom"
             ReferencedContainer = "container:Lom.xcodeproj">
@@ -59,7 +59,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BlueprintIdentifier = "FA0E99A713B4A02B006D4129"
             BuildableName = "Lom.app"
             BlueprintName = "Lom"
             ReferencedContainer = "container:Lom.xcodeproj">
