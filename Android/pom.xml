@@ -20,11 +20,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>loxal.lom</groupId>
-    <artifactId>Lom</artifactId>
+    <groupId>loxal</groupId>
+    <artifactId>lom</artifactId>
     <version>1.0.0-RELEASE</version>
     <packaging>apk</packaging>
-    <name>Metro</name>
+    <name>Lom</name>
 
     <dependencies>
         <dependency>
@@ -42,10 +42,9 @@
         <dependency>
             <groupId>phonegap</groupId>
             <artifactId>phonegap</artifactId>
-            <version>0.9.5.1</version>
-            <scope>runtime</scope>
-            <!--<scope>system</scope>-->
-            <systemPath>${basedir}/lib/phonegap.0.9.5.1.jar</systemPath>
+            <version>0.9.6</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/phonegap.0.9.6.jar</systemPath>
         </dependency>
     </dependencies>
 
