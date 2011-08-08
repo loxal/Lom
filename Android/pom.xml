@@ -42,9 +42,9 @@
         <dependency>
             <groupId>phonegap</groupId>
             <artifactId>phonegap</artifactId>
-            <version>0.9.6</version>
+            <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/phonegap.0.9.6.jar</systemPath>
+            <systemPath>${basedir}/lib/phonegap-1.0.0.jar</systemPath>
         </dependency>
     </dependencies>
 
