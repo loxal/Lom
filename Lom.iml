@@ -22,7 +22,9 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/production/Lom" />
+    <output-test url="file://$MODULE_DIR$/target/test/Lom" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/Android">
       <sourceFolder url="file://$MODULE_DIR$/Android/gen" isTestSource="false" />
