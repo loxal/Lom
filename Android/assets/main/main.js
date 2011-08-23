@@ -49,18 +49,18 @@ var toggleAccel = function() {
     if (accelerationWatch !== null) {
         navigator.accelerometer.clearWatch(accelerationWatch);
         updateAcceleration({
-                    x : "",
-                    y : "",
-                    z : ""
-                });
+            x : "",
+            y : "",
+            z : ""
+        });
         accelerationWatch = null;
     } else {
         var options = {};
         options.frequency = 1000;
         accelerationWatch = navigator.accelerometer.watchAcceleration(
-                updateAcceleration, function(ex) {
-                    alert("accel fail (" + ex.name + ": " + ex.message + ")");
-                }, options);
+            updateAcceleration, function(ex) {
+                alert("accel fail (" + ex.name + ": " + ex.message + ")");
+            }, options);
     }
 };
 
@@ -84,8 +84,8 @@ function fail(msg) {
 
 function show_pic() {
     navigator.camera.getPicture(dump_pic, fail, {
-                quality : 50
-            });
+        quality : 50
+    });
 }
 
 function close() {
@@ -101,14 +101,14 @@ function readFile() {
 
 function writeFile() {
     navigator.file.write('foo.txt', "This is a test of writing to a file",
-            fail, fail);
+        fail, fail);
 }
 
 function contacts_success(contacts) {
     alert(contacts.length
-            + ' contacts returned.'
-            + (contacts[2] && contacts[2].name ? (' Third contact is ' + contacts[2].name.formatted)
-            : ''));
+        + ' contacts returned.'
+        + (contacts[2] && contacts[2].name ? (' Third contact is ' + contacts[2].name.formatted)
+        : ''));
 }
 
 function get_contacts() {
@@ -117,8 +117,8 @@ function get_contacts() {
     obj.multiple = true;
     obj.limit = 5;
     navigator.service.contacts.find(
-            [ "displayName", "name" ], contacts_success,
-            fail, obj);
+        [ "displayName", "name" ], contacts_success,
+        fail, obj);
 }
 
 var networkReachableCallback = function(reachability) {
@@ -135,7 +135,7 @@ var networkReachableCallback = function(reachability) {
 
 function check_network() {
     navigator.network.isReachable("www.mobiledevelopersolutions.com",
-            networkReachableCallback, {});
+        networkReachableCallback, {});
 }
 
 function init() {

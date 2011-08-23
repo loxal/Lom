@@ -883,10 +883,10 @@ if (typeof PhoneGap === "undefined") {
      */
     PhoneGap.createUUID = function() {
         return PhoneGap.UUIDcreatePart(4) + '-' +
-                PhoneGap.UUIDcreatePart(2) + '-' +
-                PhoneGap.UUIDcreatePart(2) + '-' +
-                PhoneGap.UUIDcreatePart(2) + '-' +
-                PhoneGap.UUIDcreatePart(6);
+            PhoneGap.UUIDcreatePart(2) + '-' +
+            PhoneGap.UUIDcreatePart(2) + '-' +
+            PhoneGap.UUIDcreatePart(2) + '-' +
+            PhoneGap.UUIDcreatePart(6);
     };
 
     PhoneGap.UUIDcreatePart = function(length) {
@@ -1022,13 +1022,13 @@ if (!PhoneGap.hasResource("accelerometer")) {
 
         // Make sure accelerometer timeout > frequency + 10 sec
         PhoneGap.exec(
-                function(timeout) {
-                    if (timeout < (frequency + 10000)) {
-                        PhoneGap.exec(null, null, "Accelerometer", "setTimeout", [frequency + 10000]);
-                    }
-                },
-                function(e) {
-                }, "Accelerometer", "getTimeout", []);
+            function(timeout) {
+                if (timeout < (frequency + 10000)) {
+                    PhoneGap.exec(null, null, "Accelerometer", "setTimeout", [frequency + 10000]);
+                }
+            },
+            function(e) {
+            }, "Accelerometer", "getTimeout", []);
 
         // Start watch timer
         var id = PhoneGap.createUUID();
@@ -1568,20 +1568,20 @@ if (!PhoneGap.hasResource("compass")) {
 
         // Make sure compass timeout > frequency + 10 sec
         PhoneGap.exec(
-                function(timeout) {
-                    if (timeout < (frequency + 10000)) {
-                        PhoneGap.exec(null, null, "Compass", "setTimeout", [frequency + 10000]);
-                    }
-                },
-                function(e) {
-                }, "Compass", "getTimeout", []);
+            function(timeout) {
+                if (timeout < (frequency + 10000)) {
+                    PhoneGap.exec(null, null, "Compass", "setTimeout", [frequency + 10000]);
+                }
+            },
+            function(e) {
+            }, "Compass", "getTimeout", []);
 
         // Start watch timer to get headings
         var id = PhoneGap.createUUID();
         navigator.compass.timers[id] = setInterval(
-                function() {
-                    PhoneGap.exec(successCallback, errorCallback, "Compass", "getHeading", []);
-                }, (frequency ? frequency : 1));
+            function() {
+                PhoneGap.exec(successCallback, errorCallback, "Compass", "getHeading", []);
+            }, (frequency ? frequency : 1));
 
         return id;
     };
@@ -1991,20 +1991,20 @@ if (!PhoneGap.hasResource("device")) {
 
         var me = this;
         this.getInfo(
-                function(info) {
-                    me.available = true;
-                    me.platform = info.platform;
-                    me.version = info.version;
-                    me.name = info.name;
-                    me.uuid = info.uuid;
-                    me.phonegap = info.phonegap;
-                    PhoneGap.onPhoneGapInfoReady.fire();
-                },
-                function(e) {
-                    me.available = false;
-                    console.log("Error initializing PhoneGap: " + e);
-                    alert("Error initializing PhoneGap: " + e);
-                });
+            function(info) {
+                me.available = true;
+                me.platform = info.platform;
+                me.version = info.version;
+                me.name = info.name;
+                me.uuid = info.uuid;
+                me.phonegap = info.phonegap;
+                PhoneGap.onPhoneGapInfoReady.fire();
+            },
+            function(e) {
+                me.available = false;
+                console.log("Error initializing PhoneGap: " + e);
+                alert("Error initializing PhoneGap: " + e);
+            });
     };
 
     /**
@@ -2284,56 +2284,56 @@ if (!PhoneGap.hasResource("file")) {
         // Read file
         navigator.fileMgr.readAsText(this.fileName, enc,
 
-                // Success callback
-                function(r) {
-                    var evt;
+            // Success callback
+            function(r) {
+                var evt;
 
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileReader.DONE) {
-                        return;
-                    }
-
-                    // Save result
-                    me.result = r;
-
-                    // If onload callback
-                    if (typeof me.onload === "function") {
-                        me.onload({"type":"load", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileReader.DONE;
-
-                    // If onloadend callback
-                    if (typeof me.onloadend === "function") {
-                        me.onloadend({"type":"loadend", "target":me});
-                    }
-                },
-
-                // Error callback
-                function(e) {
-                    var evt;
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileReader.DONE) {
-                        return;
-                    }
-
-                    // Save error
-                    me.error = e;
-
-                    // If onerror callback
-                    if (typeof me.onerror === "function") {
-                        me.onerror({"type":"error", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileReader.DONE;
-
-                    // If onloadend callback
-                    if (typeof me.onloadend === "function") {
-                        me.onloadend({"type":"loadend", "target":me});
-                    }
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileReader.DONE) {
+                    return;
                 }
+
+                // Save result
+                me.result = r;
+
+                // If onload callback
+                if (typeof me.onload === "function") {
+                    me.onload({"type":"load", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileReader.DONE;
+
+                // If onloadend callback
+                if (typeof me.onloadend === "function") {
+                    me.onloadend({"type":"loadend", "target":me});
+                }
+            },
+
+            // Error callback
+            function(e) {
+                var evt;
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileReader.DONE) {
+                    return;
+                }
+
+                // Save error
+                me.error = e;
+
+                // If onerror callback
+                if (typeof me.onerror === "function") {
+                    me.onerror({"type":"error", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileReader.DONE;
+
+                // If onloadend callback
+                if (typeof me.onloadend === "function") {
+                    me.onloadend({"type":"loadend", "target":me});
+                }
+            }
         );
     };
 
@@ -2366,56 +2366,56 @@ if (!PhoneGap.hasResource("file")) {
         // Read file
         navigator.fileMgr.readAsDataURL(this.fileName,
 
-                // Success callback
-                function(r) {
-                    var evt;
+            // Success callback
+            function(r) {
+                var evt;
 
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileReader.DONE) {
-                        return;
-                    }
-
-                    // Save result
-                    me.result = r;
-
-                    // If onload callback
-                    if (typeof me.onload === "function") {
-                        me.onload({"type":"load", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileReader.DONE;
-
-                    // If onloadend callback
-                    if (typeof me.onloadend === "function") {
-                        me.onloadend({"type":"loadend", "target":me});
-                    }
-                },
-
-                // Error callback
-                function(e) {
-                    var evt;
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileReader.DONE) {
-                        return;
-                    }
-
-                    // Save error
-                    me.error = e;
-
-                    // If onerror callback
-                    if (typeof me.onerror === "function") {
-                        me.onerror({"type":"error", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileReader.DONE;
-
-                    // If onloadend callback
-                    if (typeof me.onloadend === "function") {
-                        me.onloadend({"type":"loadend", "target":me});
-                    }
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileReader.DONE) {
+                    return;
                 }
+
+                // Save result
+                me.result = r;
+
+                // If onload callback
+                if (typeof me.onload === "function") {
+                    me.onload({"type":"load", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileReader.DONE;
+
+                // If onloadend callback
+                if (typeof me.onloadend === "function") {
+                    me.onloadend({"type":"loadend", "target":me});
+                }
+            },
+
+            // Error callback
+            function(e) {
+                var evt;
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileReader.DONE) {
+                    return;
+                }
+
+                // Save error
+                me.error = e;
+
+                // If onerror callback
+                if (typeof me.onerror === "function") {
+                    me.onerror({"type":"error", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileReader.DONE;
+
+                // If onloadend callback
+                if (typeof me.onloadend === "function") {
+                    me.onloadend({"type":"loadend", "target":me});
+                }
+            }
         );
     };
 
@@ -2540,58 +2540,58 @@ if (!PhoneGap.hasResource("file")) {
         // Write file
         navigator.fileMgr.write(this.fileName, text, this.position,
 
-                // Success callback
-                function(r) {
-                    var evt;
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileWriter.DONE) {
-                        return;
-                    }
-
-                    // position always increases by bytes written because file would be extended
-                    me.position += r;
-                    // The length of the file is now where we are done writing.
-                    me.length = me.position;
-
-                    // If onwrite callback
-                    if (typeof me.onwrite === "function") {
-                        me.onwrite({"type":"write", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileWriter.DONE;
-
-                    // If onwriteend callback
-                    if (typeof me.onwriteend === "function") {
-                        me.onwriteend({"type":"writeend", "target":me});
-                    }
-                },
-
-                // Error callback
-                function(e) {
-                    var evt;
-
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileWriter.DONE) {
-                        return;
-                    }
-
-                    // Save error
-                    me.error = e;
-
-                    // If onerror callback
-                    if (typeof me.onerror === "function") {
-                        me.onerror({"type":"error", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileWriter.DONE;
-
-                    // If onwriteend callback
-                    if (typeof me.onwriteend === "function") {
-                        me.onwriteend({"type":"writeend", "target":me});
-                    }
+            // Success callback
+            function(r) {
+                var evt;
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileWriter.DONE) {
+                    return;
                 }
+
+                // position always increases by bytes written because file would be extended
+                me.position += r;
+                // The length of the file is now where we are done writing.
+                me.length = me.position;
+
+                // If onwrite callback
+                if (typeof me.onwrite === "function") {
+                    me.onwrite({"type":"write", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileWriter.DONE;
+
+                // If onwriteend callback
+                if (typeof me.onwriteend === "function") {
+                    me.onwriteend({"type":"writeend", "target":me});
+                }
+            },
+
+            // Error callback
+            function(e) {
+                var evt;
+
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileWriter.DONE) {
+                    return;
+                }
+
+                // Save error
+                me.error = e;
+
+                // If onerror callback
+                if (typeof me.onerror === "function") {
+                    me.onerror({"type":"error", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileWriter.DONE;
+
+                // If onwriteend callback
+                if (typeof me.onwriteend === "function") {
+                    me.onwriteend({"type":"writeend", "target":me});
+                }
+            }
         );
 
     };
@@ -2655,56 +2655,56 @@ if (!PhoneGap.hasResource("file")) {
         // Write file
         navigator.fileMgr.truncate(this.fileName, size,
 
-                // Success callback
-                function(r) {
-                    var evt;
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileWriter.DONE) {
-                        return;
-                    }
-
-                    // Update the length of the file
-                    me.length = r;
-                    me.position = Math.min(me.position, r);
-
-                    // If onwrite callback
-                    if (typeof me.onwrite === "function") {
-                        me.onwrite({"type":"write", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileWriter.DONE;
-
-                    // If onwriteend callback
-                    if (typeof me.onwriteend === "function") {
-                        me.onwriteend({"type":"writeend", "target":me});
-                    }
-                },
-
-                // Error callback
-                function(e) {
-                    var evt;
-                    // If DONE (cancelled), then don't do anything
-                    if (me.readyState === FileWriter.DONE) {
-                        return;
-                    }
-
-                    // Save error
-                    me.error = e;
-
-                    // If onerror callback
-                    if (typeof me.onerror === "function") {
-                        me.onerror({"type":"error", "target":me});
-                    }
-
-                    // DONE state
-                    me.readyState = FileWriter.DONE;
-
-                    // If onwriteend callback
-                    if (typeof me.onwriteend === "function") {
-                        me.onwriteend({"type":"writeend", "target":me});
-                    }
+            // Success callback
+            function(r) {
+                var evt;
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileWriter.DONE) {
+                    return;
                 }
+
+                // Update the length of the file
+                me.length = r;
+                me.position = Math.min(me.position, r);
+
+                // If onwrite callback
+                if (typeof me.onwrite === "function") {
+                    me.onwrite({"type":"write", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileWriter.DONE;
+
+                // If onwriteend callback
+                if (typeof me.onwriteend === "function") {
+                    me.onwriteend({"type":"writeend", "target":me});
+                }
+            },
+
+            // Error callback
+            function(e) {
+                var evt;
+                // If DONE (cancelled), then don't do anything
+                if (me.readyState === FileWriter.DONE) {
+                    return;
+                }
+
+                // Save error
+                me.error = e;
+
+                // If onerror callback
+                if (typeof me.onerror === "function") {
+                    me.onerror({"type":"error", "target":me});
+                }
+
+                // DONE state
+                me.readyState = FileWriter.DONE;
+
+                // If onwriteend callback
+                if (typeof me.onwriteend === "function") {
+                    me.onwriteend({"type":"writeend", "target":me});
+                }
+            }
         );
     };
 
@@ -2978,8 +2978,8 @@ if (!PhoneGap.hasResource("file")) {
             if (writer.fileName === null || writer.fileName === "") {
                 if (typeof errorCallback == "function") {
                     errorCallback({
-                                "code": FileError.INVALID_STATE_ERR
-                            });
+                        "code": FileError.INVALID_STATE_ERR
+                    });
                 }
             }
 
@@ -3020,8 +3020,8 @@ if (!PhoneGap.hasResource("file")) {
         if (type < 0 || type > 3) {
             if (typeof errorCallback == "function") {
                 errorCallback({
-                            "code": FileError.SYNTAX_ERR
-                        });
+                    "code": FileError.SYNTAX_ERR
+                });
             }
         }
         else {
@@ -3670,34 +3670,34 @@ if (!PhoneGap.hasResource("network")) {
 
         var me = this;
         this.getInfo(
-                function(type) {
-                    // Need to send events if we are on or offline
-                    if (type == "none") {
-                        // set a timer if still offline at the end of timer send the offline event
-                        me._timer = setTimeout(function() {
-                            me.type = type;
-                            PhoneGap.fireEvent('offline');
-                            me._timer = null;
-                        }, me.timeout);
-                    } else {
-                        // If there is a current offline event pending clear it
-                        if (me._timer != null) {
-                            clearTimeout(me._timer);
-                            me._timer = null;
-                        }
+            function(type) {
+                // Need to send events if we are on or offline
+                if (type == "none") {
+                    // set a timer if still offline at the end of timer send the offline event
+                    me._timer = setTimeout(function() {
                         me.type = type;
-                        PhoneGap.fireEvent('online');
+                        PhoneGap.fireEvent('offline');
+                        me._timer = null;
+                    }, me.timeout);
+                } else {
+                    // If there is a current offline event pending clear it
+                    if (me._timer != null) {
+                        clearTimeout(me._timer);
+                        me._timer = null;
                     }
+                    me.type = type;
+                    PhoneGap.fireEvent('online');
+                }
 
-                    // should only fire this once
-                    if (me._firstRun) {
-                        me._firstRun = false;
-                        PhoneGap.onPhoneGapConnectionReady.fire();
-                    }
-                },
-                function(e) {
-                    console.log("Error initializing Network Connection: " + e);
-                });
+                // should only fire this once
+                if (me._firstRun) {
+                    me._firstRun = false;
+                    PhoneGap.onPhoneGapConnectionReady.fire();
+                }
+            },
+            function(e) {
+                console.log("Error initializing Network Connection: " + e);
+            });
     };
 
     Connection.UNKNOWN = "unknown";
@@ -4270,21 +4270,21 @@ if (!PhoneGap.hasResource("storage")) {
             }
 
             this.db.transaction(
-                    function (transaction) {
-                        var i;
-                        transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
-                        transaction.executeSql('SELECT * FROM storage', [], function(tx, result) {
-                            for (var i = 0; i < result.rows.length; i++) {
-                                storage[result.rows.item(i)['id']] = result.rows.item(i)['body'];
-                            }
-                            setLength(result.rows.length);
-                            PhoneGap.initializationComplete("cupcakeStorage");
-                        });
+                function (transaction) {
+                    var i;
+                    transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
+                    transaction.executeSql('SELECT * FROM storage', [], function(tx, result) {
+                        for (var i = 0; i < result.rows.length; i++) {
+                            storage[result.rows.item(i)['id']] = result.rows.item(i)['body'];
+                        }
+                        setLength(result.rows.length);
+                        PhoneGap.initializationComplete("cupcakeStorage");
+                    });
 
-                    },
-                    function (err) {
-                        alert(err.message);
-                    }
+                },
+                function (err) {
+                    alert(err.message);
+                }
             );
             this.setItem = function(key, val) {
                 if (typeof(storage[key]) == 'undefined') {
@@ -4292,10 +4292,10 @@ if (!PhoneGap.hasResource("storage")) {
                 }
                 storage[key] = val;
                 this.db.transaction(
-                        function (transaction) {
-                            transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
-                            transaction.executeSql('REPLACE INTO storage (id, body) values(?,?)', [key,val]);
-                        }
+                    function (transaction) {
+                        transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
+                        transaction.executeSql('REPLACE INTO storage (id, body) values(?,?)', [key,val]);
+                    }
                 );
             };
             this.getItem = function(key) {
@@ -4305,20 +4305,20 @@ if (!PhoneGap.hasResource("storage")) {
                 delete storage[key];
                 this.length--;
                 this.db.transaction(
-                        function (transaction) {
-                            transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
-                            transaction.executeSql('DELETE FROM storage where id=?', [key]);
-                        }
+                    function (transaction) {
+                        transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
+                        transaction.executeSql('DELETE FROM storage where id=?', [key]);
+                    }
                 );
             };
             this.clear = function() {
                 storage = {};
                 this.length = 0;
                 this.db.transaction(
-                        function (transaction) {
-                            transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
-                            transaction.executeSql('DELETE FROM storage', []);
-                        }
+                    function (transaction) {
+                        transaction.executeSql('CREATE TABLE IF NOT EXISTS storage (id NVARCHAR(40) PRIMARY KEY, body NVARCHAR(255))');
+                        transaction.executeSql('DELETE FROM storage', []);
+                    }
                 );
             };
             this.key = function(index) {
