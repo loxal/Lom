@@ -34,6 +34,9 @@ public class WebAppWrapper extends Activity {
         final Activity activity = this;
         final WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setAllowContentAccess(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setAppCacheEnabled(false);
 //        webView.getSettings().setBuiltInZoomControls(true);
 //        getWindow().requestFeature(Window.FEATURE_PROGRESS);
 //        webView.setInitialScale(1);
