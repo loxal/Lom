@@ -34,9 +34,10 @@
     <application android:icon="@drawable/icon"
                  android:label="@string/app_name"
                  android:debuggable="true"
+                 android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
             >
-        <!--<activity android:name=".WebAppWrapper"-->
-        <activity android:name=".Wrapper"
+        <!--<activity android:name=".Wrapper"-->
+        <activity android:name=".WebAppWrapper"
                   android:label="@string/app_name"
                   android:configChanges="orientation|keyboardHidden"
                 >

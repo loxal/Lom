@@ -17,6 +17,7 @@
 package loxal.lom;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Window;
 import android.webkit.WebChromeClient;
