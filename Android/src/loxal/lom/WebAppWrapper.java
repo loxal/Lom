@@ -17,10 +17,7 @@
 package loxal.lom;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.Window;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -32,7 +29,8 @@ public class WebAppWrapper extends Activity {
         super.onCreate(savedInstanceState);
 
 //        final String url = "file:///android_asset/main/main.html";
-        final String url = "http://lox.loxal.net";
+//        final String url = "http://lox.loxal.net";
+        final String url = "http://b.lox1-loxal.appspot.com";
         final Activity activity = this;
         final WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
