@@ -18,6 +18,8 @@ package loxal.lom;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Window;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -29,27 +31,26 @@ public class WebAppWrapper extends Activity {
         super.onCreate(savedInstanceState);
 
 //        final String url = "file:///android_asset/main/main.html";
-//        final String url = "http://lox.loxal.net";
-        final String url = "http://b.lox1-loxal.appspot.com";
+        final String url = "http://main.epvin.com/?channel=app";
         final Activity activity = this;
         final WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowContentAccess(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        webView.getSettings().setAppCacheEnabled(false);
-//        webView.getSettings().setBuiltInZoomControls(true);
-//        getWindow().requestFeature(Window.FEATURE_PROGRESS);
+        webView.getSettings().setAppCacheEnabled(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        getWindow().requestFeature(Window.FEATURE_PROGRESS);
 //        webView.setInitialScale(1);
 
-//        webView.setWebChromeClient(new WebChromeClient() {
-//            public void onProgressChanged(WebView webView, int progress) {
-//                setProgress(progress * 100);
-//            }
-//        });
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onProgressChanged(WebView webView, int progress) {
+                setProgress(progress * 100);
+            }
+        });
 
         webView.setWebViewClient(new WebViewClient() {
             public void onReceivedError(WebView webView, int errorCode, String description, String failingUrl) {
-                Toast.makeText(activity, "Oops, shouldn't happen! " + description,
+                Toast.makeText(activity, "Oops, this shouldn't happen! " + description,
                         Toast.LENGTH_SHORT).show();
             }
 

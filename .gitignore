@@ -16,3 +16,4 @@ default.properties
 /\.idea/workspace\.xml
 */\.idea/workspace\.xml
 /target
+Android/target

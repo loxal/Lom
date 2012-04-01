@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lom</string>
-    <string name="go">Snap</string>
-
-    <!--Gesture API Demo-->
-    <string name="menu_gesture_search">Gesture Search</string>
+    <string name="app_name">Epvin</string>
 </resources>
