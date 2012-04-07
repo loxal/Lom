@@ -35,12 +35,10 @@ public class WebAppWrapper extends Activity {
         final Activity activity = this;
         final WebView webView = new WebView(this);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setAllowContentAccess(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setBuiltInZoomControls(true);
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
-//        webView.setInitialScale(1);
 
         webView.setWebChromeClient(new WebChromeClient() {
             public void onProgressChanged(WebView webView, int progress) {
