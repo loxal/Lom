@@ -1,1 +1,1 @@
-# Lom — Multi platform client
+# Lom — Multi Platform Client
